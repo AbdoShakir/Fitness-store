@@ -19,8 +19,6 @@ export default function Navbar() {
   const searchTerm = useSelector((state) => state.product.searchTerm);
   const cartItems = useSelector((state) => state.cart.items || []);
 
-  const itemsCount =
-    cartItems?.reduce((total, item) => total + (item.quantity || 1), 0) || 0;
 
   return (
     <header className="bg-slate-100 text-white shadow-xl sticky top-0 z-50 border-b border-slate-800">
