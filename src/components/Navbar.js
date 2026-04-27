@@ -17,7 +17,6 @@ export default function Navbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const dispatch = useDispatch();
   const searchTerm = useSelector((state) => state.product.searchTerm);
-  const cartItems = useSelector((state) => state.cart.items || []);
 
 
   return (
