@@ -8,7 +8,8 @@ import About from "./pages/About";
 import FAQs from "./pages/FAQs";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
-import { useEffect } from "react";
+import GymLoader from "./components/LoadingScreen";
+import { useEffect ,useState } from "react";
 import { useSelector } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import CheckoutSuccess from "./pages/CheckoutSuccess";
@@ -19,6 +20,13 @@ function App() {
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
+
+const [loading, setLoading] = useState(true);
+
+  if (loading) {
+    return <GymLoader onFinish={() => setLoading(false)} />;
+  }
+
   return (
     <>
       <Navbar />
